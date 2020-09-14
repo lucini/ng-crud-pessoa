@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Pessoa } from 'src/app/model/pessoa';
-import { PessoaService } from 'src/app/pessoa.service';
+import { PessoaService } from './pessoa.service';
 
 @Component({
   selector: 'app-pessoa-list',
@@ -21,6 +21,18 @@ export class PessoaListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getDados();
+  }
+
+  getDados(): void {
     this.pessoaService.findAll().subscribe(pessoas => this.value = pessoas);
+  }
+
+  editar(pessoa: Pessoa): void {
+
+  }
+
+  remover(pessoa: Pessoa): void {
+    this.pessoaService.deleteById(pessoa.id).subscribe(() => this.getDados());
   }
 }

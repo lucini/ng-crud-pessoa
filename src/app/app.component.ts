@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Pessoa } from './model/pessoa';
-import { PessoaService } from './pessoa.service';
+import { Component } from '@angular/core';
+import { PrimeNGConfig } from 'primeng/api';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +7,7 @@ import { PessoaService } from './pessoa.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ng-crud-pessoa';
+  constructor(private primengConfig: PrimeNGConfig) {
+    this.primengConfig.ripple = true;
+  }
 }

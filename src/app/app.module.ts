@@ -1,13 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {CardModule} from 'primeng/card';
-import {TableModule} from 'primeng/table';
-import { PessoaService } from './pessoa.service';
 import { HttpClientModule } from '@angular/common/http';
-import { PessoaModule } from './page/pessoa.module';
+import { PessoaModule } from './page/pessoa/pessoa.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToolbarModule } from 'primeng/toolbar';
+import { ButtonModule } from 'primeng/button';
 
 
 @NgModule({
@@ -16,11 +15,13 @@ import { PessoaModule } from './page/pessoa.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
+    ToolbarModule,
     PessoaModule,
+    ButtonModule,
   ],
-  providers: [PessoaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TableModule } from 'primeng/table';
 import { CardModule } from 'primeng/card';
-import { PessoaListComponent } from './pessoa/pessoa-list.component';
+import { PessoaListComponent } from './pessoa-list.component';
+import { PessoaService } from './pessoa.service';
+import { ButtonModule } from 'primeng/button';
 
 
 
@@ -14,9 +16,11 @@ import { PessoaListComponent } from './pessoa/pessoa-list.component';
     CommonModule,
     TableModule,
     CardModule,
+    ButtonModule,
   ],
   exports: [
     PessoaListComponent
-  ]
+  ],
+  providers: [PessoaService]
 })
 export class PessoaModule { }
