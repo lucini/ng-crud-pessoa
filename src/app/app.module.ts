@@ -7,6 +7,8 @@ import { PessoaModule } from './page/pessoa/pessoa.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToolbarModule } from 'primeng/toolbar';
 import { ButtonModule } from 'primeng/button';
+import { ConfirmationService } from 'primeng/api';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { ButtonModule } from 'primeng/button';
     ToolbarModule,
     PessoaModule,
     ButtonModule,
+    ConfirmDialogModule,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [ConfirmationService]
 })
 export class AppModule { }

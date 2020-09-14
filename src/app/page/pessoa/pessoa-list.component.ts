@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConfirmationService } from 'primeng/api';
 import { Pessoa } from 'src/app/model/pessoa';
 import { PessoaService } from './pessoa.service';
 
@@ -12,7 +13,8 @@ export class PessoaListComponent implements OnInit {
   value: Pessoa[] = [];
   cols: any[];
 
-  constructor(private pessoaService: PessoaService) {
+  constructor(private pessoaService: PessoaService,
+    private confirmationService: ConfirmationService) {
     this.cols = [
       { field: 'id', header: 'Código' },
       { field: 'nome', header: 'Nome' },
@@ -33,6 +35,16 @@ export class PessoaListComponent implements OnInit {
   }
 
   remover(pessoa: Pessoa): void {
-    this.pessoaService.deleteById(pessoa.id).subscribe(() => this.getDados());
+    this.confirmationService.confirm({
+      message: 'Tem certeza que deseja excluir a pessoa?',
+      header: 'Confirmação',
+      icon: 'pi pi-exclamation-triangle',
+      acceptLabel: 'Sim',
+      rejectLabel: 'Não',
+      accept: () => {
+        this.pessoaService.deleteById(pessoa.id).subscribe(() => this.getDados());
+
+      }
+  });
   }
 }
