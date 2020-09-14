@@ -1,0 +1,16 @@
+<p-card header="Pessoa">
+    <p-table [value]="value">
+        <ng-template pTemplate="header">
+            <tr>
+                <th *ngFor="let col of cols">
+                    {{col.header}}
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-columns="columns">
+            <td *ngFor="let col of columns">
+                {{rowData[col.field]}}
+            </td>
+        </ng-template>
+    </p-table>
+</p-card>

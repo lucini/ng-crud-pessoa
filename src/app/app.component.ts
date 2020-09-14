@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Pessoa } from './model/pessoa';
+import { PessoaService } from './pessoa.service';
 
 @Component({
   selector: 'app-root',

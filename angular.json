@@ -28,7 +28,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/primeng/resources/themes/bootstrap4-light-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
+              "node_modules/primeicons/primeicons.css"
             ],
             "scripts": []
           },
@@ -123,6 +126,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ng-crud-pessoa"
+    }
+  },
+  "defaultProject": "ng-crud-pessoa",
+  "cli": {
+    "analytics": "58a8d525-cb89-4348-a2f9-93fd5d93d24e"
+  }
 }
