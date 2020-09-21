@@ -42,8 +42,8 @@ export class PessoaListComponent implements OnInit {
       acceptLabel: 'Sim',
       rejectLabel: 'Não',
       accept: () => {
-        this.pessoaService.deleteById(pessoa.id).subscribe(() => this.getDados());
-
+        const index = this.value.findIndex( p => p.id === pessoa.id)
+        this.pessoaService.deleteById(pessoa.id).subscribe(() => this.value.splice(index, 1));
       }
   });
   }
